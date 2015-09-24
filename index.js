@@ -1,3 +1,5 @@
+var extend = require('util')._extend;
+
 var BadRequestError = require('./bad-request');
 var UnauthorizedError = require('./unauthorized');
 var ForbiddenError = require('./forbidden');
@@ -26,8 +28,13 @@ function hata(code, message, obj) {
     case 'conflict':
       return new ConflictError(message, obj);
     case 422:
-    case 'unprocessable-entity':
+    case 'unprocessableentity':
       return new UnprocessableEntityError(message, obj);
+    default:
+      var error = new Error(message);
+      error.code = error;
+      extend(error, obj);
+      return error;
   }
 }
 
