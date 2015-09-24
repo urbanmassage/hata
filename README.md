@@ -16,17 +16,22 @@ The error object is an instance of `Error`, with the properties `name`, `message
 
 ## Usage
 
-    var NotFoundError = require('http-errors/not-found');
+    var NotFoundError = require('hata/not-found');
 
     throw new NotFoundError('Product not found');
 
 You can also add more properties to the error object by passing them as the second parameter.
 
-    var NotFoundError = require('http-errors/not-found');
+    var NotFoundError = require('hata/not-found');
 
     var error = new NotFoundError('Product not found', { item: 'product', id: 1, });
     // error now has attributes `item` and `id`.
-    
+
+You can also use it in the following way:
+
+    var hata = require('hata');
+    var error = hata(404/*, message, obj*/);
+
 ### Express
 Just add a regular error handler like the following:
 
