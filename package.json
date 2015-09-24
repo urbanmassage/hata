@@ -1,6 +1,6 @@
 {
   "name": "http-errors",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "Common HTTP errors to be used with express.js or whatever engine you use.",
   "main": "index.js",
   "scripts": {
