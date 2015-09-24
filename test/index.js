@@ -28,7 +28,8 @@ describe('hata', function() {
     expect(hata('UnprocessableEntity')).to.be.an.instanceOf(UnprocessableEntityError);
   });
 
-  it('should work with invalid codes', function() {
+  it('should work with unsupported codes', function() {
     expect(hata('unknown')).to.be.an.instanceOf(Error).and.to.have.property('code');
+    expect(hata(500)).to.be.an.instanceOf(Error).and.to.have.property('httpStatus');
   });
 });

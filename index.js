@@ -11,7 +11,8 @@ function hata(code, message, obj) {
   if ('string' === typeof code) {
     code = code.toLowerCase().replace(/[^a-z0-9]+/g, '');
   }
-  switch(code) {
+
+  switch (code) {
     case 400:
     case 'badrequest':
       return new BadRequestError(message, obj);
@@ -32,7 +33,12 @@ function hata(code, message, obj) {
       return new UnprocessableEntityError(message, obj);
     default:
       var error = new Error(message);
-      error.code = error;
+      if (!isNaN(code)) {
+        error.httpStatus = code;
+      } else {
+        error.code = error;
+      }
+
       extend(error, obj);
       return error;
   }
