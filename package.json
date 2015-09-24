@@ -1,0 +1,25 @@
+{
+  "name": "http-errors",
+  "version": "1.0.0",
+  "description": "Common HTTP errors to be used with express.js or whatever engine you use.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/urbanmassage/http-errors.git"
+  },
+  "author": "Louay Alakkad <louay@alakkad.me>",
+  "license": "LGPL-3.0",
+  "bugs": {
+    "url": "https://github.com/urbanmassage/http-errors/issues"
+  },
+  "homepage": "https://github.com/urbanmassage/http-errors#readme",
+  "keywords": [
+    "http",
+    "error",
+    "errors",
+    "express"
+  ]
+}
