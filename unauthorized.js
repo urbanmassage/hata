@@ -1,14 +1,16 @@
-var merge = require('merge');
+var extend = require('util')._extend;
 
 function UnauthorizedError(message, obj) {
-  merge(this, obj, {
+  extend(this, obj);
+  extend(this, {
     message: message || 'Unauthorized access',
     httpCode: 401,
+    constructor: UnauthorizedError,
+    name: this.constructor.name,
   });
-  this.constructor = UnauthorizedError;
   Error.captureStackTrace(this, this.constructor);
-  this.name = this.constructor.name;
 }
+
 UnauthorizedError.prototype = Error.prototype;
 
 module.exports = UnauthorizedError;

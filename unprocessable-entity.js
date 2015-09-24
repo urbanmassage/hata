@@ -1,14 +1,16 @@
-var merge = require('merge');
+var extend = require('util')._extend;
 
 function UnprocessableEntityError(message, obj) {
-  merge(this, obj, {
+  extend(this, obj);
+  extend(this, {
     message: message || 'Unprocessable entity',
     httpCode: 422,
+    constructor: UnprocessableEntityError,
+    name: this.constructor.name,
   });
-  this.constructor = UnprocessableEntityError;
   Error.captureStackTrace(this, this.constructor);
-  this.name = this.constructor.name;
 }
+
 UnprocessableEntityError.prototype = Error.prototype;
 
 module.exports = UnprocessableEntityError;

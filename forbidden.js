@@ -1,13 +1,14 @@
-var merge = require('merge');
+var extend = require('util')._extend;
 
 function ForbiddenError(message, obj) {
-  merge(this, obj, {
+  extend(this, obj);
+  extend(this, {
     message: message || 'Access forbidden',
     httpCode: 403,
+    constructor: ForbiddenError,
+    name: this.constructor.name,
   });
-  this.constructor = ForbiddenError;
   Error.captureStackTrace(this, this.constructor);
-  this.name = this.constructor.name;
 }
 
 ForbiddenError.prototype = Error.prototype;

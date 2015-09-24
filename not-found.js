@@ -1,14 +1,16 @@
-var merge = require('merge');
+var extend = require('util')._extend;
 
 function NotFoundError(message, obj) {
-  merge(this, obj, {
+  extend(this, obj);
+  extend(this, {
     message: message || 'Item not found',
     httpCode: 404,
+    constructor: NotFoundError,
+    name: this.constructor.name,
   });
-  this.constructor = NotFoundError;
   Error.captureStackTrace(this, this.constructor);
-  this.name = this.constructor.name;
 }
+
 NotFoundError.prototype = Error.prototype;
 
 module.exports = NotFoundError;
