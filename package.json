@@ -27,6 +27,7 @@
     "merge": "^1.2.0"
   },
   "devDependencies": {
+    "chai": "^3.3.0",
     "istanbul": "^0.3.21",
     "mocha": "^2.3.3",
     "mocha-jshint": "^2.2.3",
