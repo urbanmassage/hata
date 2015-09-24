@@ -5,6 +5,7 @@ function ForbiddenError(message, obj) {
     message: message || 'Access forbidden',
     httpCode: 403,
   });
+  this.constructor = ForbiddenError;
   Error.captureStackTrace(this, this.constructor);
   this.name = this.constructor.name;
 }
