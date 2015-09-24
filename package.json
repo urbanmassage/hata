@@ -1,6 +1,6 @@
 {
   "name": "hata",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Common HTTP errors to be used with express.js or whatever engine you use.",
   "main": "index.js",
   "scripts": {
