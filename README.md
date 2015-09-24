@@ -14,9 +14,12 @@ Hata means "error" in Arabic (and Turkish!), which is where the package name com
 ## Features
 
 The following error types are currently supported:
+- (400) bad-request: `BadRequestError` 
 - (401) unauthorized: `UnauthorizedError` 
 - (403) forbidden: `ForbiddenError`
 - (404) not-found: `NotFoundError`
+- (409) conflict: `ConflictError`
+- (422) unprocessable-entity: `UnprocessableEntityError`
 
 
 The error object is an instance of `Error`, with the properties `name`, `message` and `stack`.
