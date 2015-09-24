@@ -1,4 +1,11 @@
 # Hata (HTTP Errors)
+[![Circle CI](https://img.shields.io/circleci/project/urbanmassage/hata.svg)](https://circleci.com/gh/urbanmassage/hata)
+[![npm](https://img.shields.io/npm/v/hata.svg)](https://www.npmjs.com/package/hata)
+[![npm](https://img.shields.io/npm/l/hata.svg)](https://www.npmjs.com/package/hata)
+[![Codacy](https://img.shields.io/codacy/ea39f341576b4e2b8102d0a6454b93f4.svg)](https://www.codacy.com/app/urbanmassage/hata)
+[![Codecov](https://img.shields.io/codecov/c/github/urbanmassage/hata.svg)](https://codecov.io/github/urbanmassage/hata/)
+[![VersionEye](https://img.shields.io/versioneye/d/nodejs/hata.svg)](https://www.versioneye.com/nodejs/hata/)
+
 Common HTTP errors to be used with express.js or whatever engine you use.
 
 ## The name
