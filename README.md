@@ -1,5 +1,8 @@
-# HTTP Errors
+# Hata (HTTP Errors)
 Common HTTP errors to be used with express.js or whatever engine you use.
+
+## The name
+Hata means "error" in Arabic (and Turkish!), which is where the name comes from.
 
 ## Features
 

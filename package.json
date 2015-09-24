@@ -1,5 +1,5 @@
 {
-  "name": "http-errors",
+  "name": "hata",
   "version": "0.1.0",
   "description": "Common HTTP errors to be used with express.js or whatever engine you use.",
   "main": "index.js",
@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/urbanmassage/http-errors.git"
+    "url": "git+https://github.com/urbanmassage/hata.git"
   },
   "author": "Louay Alakkad <louay@alakkad.me>",
   "license": "LGPL-3.0",
   "bugs": {
-    "url": "https://github.com/urbanmassage/http-errors/issues"
+    "url": "https://github.com/urbanmassage/hata/issues"
   },
-  "homepage": "https://github.com/urbanmassage/http-errors#readme",
+  "homepage": "https://github.com/urbanmassage/hata#readme",
   "keywords": [
     "http",
     "error",
