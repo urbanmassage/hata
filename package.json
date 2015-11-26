@@ -4,8 +4,12 @@
   "description": "Common HTTP errors to be used with express.js or whatever engine you use.",
   "main": "index.js",
   "scripts": {
+    "lint": "tslint index.ts",
+    "build": "tsc -p .",
+    "pretest": "npm run build",
     "test": "mocha",
-    "coverage": "istanbul cover _mocha -- -ig jshint"
+    "coverage": "istanbul cover _mocha --",
+    "postcoverage": "node scripts/map-coverage.js"
   },
   "repository": {
     "type": "git",
@@ -29,8 +33,12 @@
     "codacy-coverage": "^1.1.3",
     "codecov.io": "^0.1.6",
     "istanbul": "^0.3.21",
+    "lcov-sourcemap": "^0.1.3",
     "mocha": "^2.3.3",
-    "mocha-jshint": "^2.2.3",
-    "mocha-junit-reporter": "^1.6.1"
-  }
+    "mocha-junit-reporter": "^1.6.1",
+    "tsd": "^0.6.5",
+    "tslint": "^3.0.0",
+    "typescript": "^1.6.2"
+  },
+  "typings": "index.d.ts"
 }
