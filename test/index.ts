@@ -1,15 +1,15 @@
-var expect = require('chai').expect;
+import {expect} from 'chai';
+
+import hata = require('../index');
+
+import BadRequestError = require('../bad-request');
+import UnauthorizedError = require('../unauthorized');
+import ForbiddenError = require('../forbidden');
+import NotFoundError = require('../not-found');
+import ConflictError = require('../conflict');
+import UnprocessableEntityError = require('../unprocessable-entity');
 
 describe('hata', function() {
-  var hata = require('..');
-
-  var BadRequestError = require('../bad-request');
-  var UnauthorizedError = require('../unauthorized');
-  var ForbiddenError = require('../forbidden');
-  var NotFoundError = require('../not-found');
-  var ConflictError = require('../conflict');
-  var UnprocessableEntityError = require('../unprocessable-entity');
-
   it('should work with numeric codes', function() {
     expect(hata(400)).to.be.an.instanceOf(BadRequestError);
     expect(hata(401)).to.be.an.instanceOf(UnauthorizedError);

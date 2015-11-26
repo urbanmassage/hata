@@ -6,8 +6,9 @@ import ConflictError = require('./conflict');
 import UnprocessableEntityError = require('./unprocessable-entity');
 import HataError = require('./hata');
 
-function hata<T>(code: number | string, message: string, obj: T);
-function hata<T>(code: any, message: string = '', obj: T = <T>{}) {
+function hata(code: number | string, message?: string): HataError<{}>;
+function hata<T>(code: number | string, message: string, obj: T): HataError<T>;
+function hata<T>(code: any, message: string = '', obj?: T): HataError<T> {
   if ('string' === typeof code) {
     code = (<string>code).toLowerCase().replace(/[^a-z0-9]+/g, '');
   }
