@@ -1,4 +1,4 @@
-var expect = require('chai').expect;
+import {expect} from 'chai';
 
 describe('BadRequestError', function() {
   var BadRequestError = require('../bad-request');

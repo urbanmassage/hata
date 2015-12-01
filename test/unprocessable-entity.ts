@@ -1,4 +1,4 @@
-var expect = require('chai').expect;
+import {expect} from 'chai';
 
 describe('UnprocessableEntityError', function() {
   var UnprocessableEntityError = require('../unprocessable-entity');

@@ -1,4 +1,4 @@
-var expect = require('chai').expect;
+import {expect} from 'chai';
 
 describe('NotFoundError', function() {
   var NotFoundError = require('../not-found');
