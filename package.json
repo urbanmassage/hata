@@ -9,7 +9,8 @@
     "pretest": "npm run build",
     "test": "mocha",
     "coverage": "istanbul cover _mocha --",
-    "postcoverage": "node scripts/map-coverage.js"
+    "postcoverage": "if [ -f coverage/lcov.info ]; then node node_modules/.bin/map-coverage && mv coverage/lcov.info coverage/lcov-raw.info && mv coverage/lcov-mapped.info coverage/lcov.info; fi",
+    "sendcoverage": "if [ -f coverage/lcov-mapped.info ]; then cat ./coverage/lcov-mapped.info | ./node_modules/codecov.io/bin/codecov.io.js && cat ./coverage/lcov-mapped.info | ./node_modules/.bin/codacy-coverage; fi"
   },
   "repository": {
     "type": "git",
@@ -35,6 +36,7 @@
     "glob": "^6.0.1",
     "istanbul": "^0.4.1",
     "lcov-sourcemap": "^0.1.3",
+    "map-coverage": "0.0.3",
     "mocha": "^2.3.3",
     "mocha-junit-reporter": "^1.6.1",
     "tsd": "^0.6.5",
