@@ -1,5 +1,5 @@
 # Hata (HTTP Errors)
-[![Circle CI](https://img.shields.io/circleci/project/urbanmassage/hata.svg)](https://circleci.com/gh/urbanmassage/hata)
+[![Travis CI](https://img.shields.io/travis/urbanmassage/hata.svg)](https://travis-ci.org/urbanmassage/hata)
 [![npm](https://img.shields.io/npm/v/hata.svg)](https://www.npmjs.com/package/hata)
 [![npm](https://img.shields.io/npm/l/hata.svg)](https://www.npmjs.com/package/hata)
 [![Codecov](https://img.shields.io/codecov/c/github/urbanmassage/hata.svg)](https://codecov.io/github/urbanmassage/hata/)
@@ -13,8 +13,8 @@ Hata means "error" in Arabic (and Turkish!), which is where the package name com
 ## Features
 
 The following error types are currently supported:
-- (400) bad-request: `BadRequestError` 
-- (401) unauthorized: `UnauthorizedError` 
+- (400) bad-request: `BadRequestError`
+- (401) unauthorized: `UnauthorizedError`
 - (403) forbidden: `ForbiddenError`
 - (404) not-found: `NotFoundError`
 - (409) conflict: `ConflictError`
