@@ -7,6 +7,7 @@ describe('ForbiddenError', function() {
     var error = new ForbiddenError();
 
     expect(error).to.be.an.instanceOf(Error);
+    expect(error).to.have.property('message').and.to.equal('Access forbidden');
     expect(error).to.have.property('httpCode').and.to.equal(403);
     expect(error).to.have.property('stack').and.to.contain('forbidden.js');
   });

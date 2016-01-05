@@ -7,6 +7,7 @@ describe('ConflictError', function() {
     var error = new ConflictError();
 
     expect(error).to.be.an.instanceOf(Error);
+    expect(error).to.have.property('message').and.to.equal('Item conflicts with another item');
     expect(error).to.have.property('httpCode').and.to.equal(409);
     expect(error).to.have.property('stack').and.to.contain('conflict.js');
   });

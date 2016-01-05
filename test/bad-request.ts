@@ -7,6 +7,7 @@ describe('BadRequestError', function() {
     var error = new BadRequestError();
 
     expect(error).to.be.an.instanceOf(Error);
+    expect(error).to.have.property('message').and.to.equal('Bad request');
     expect(error).to.have.property('httpCode').and.to.equal(400);
     expect(error).to.have.property('stack').and.to.contain('bad-request.js');
   });

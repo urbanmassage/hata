@@ -7,6 +7,7 @@ describe('UnauthorizedError', function() {
     var error = new UnauthorizedError();
 
     expect(error).to.be.an.instanceOf(Error);
+    expect(error).to.have.property('message').and.to.equal('Unauthorized access');
     expect(error).to.have.property('httpCode').and.to.equal(401);
     expect(error).to.have.property('stack').and.to.contain('unauthorized.js');
   });
