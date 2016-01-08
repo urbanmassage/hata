@@ -1,15 +1,18 @@
 language: node_js
 node_js:
-  - "4.1"
-  - "4.0"
-  - "0.12"
-  - "0.11"
-  - "0.10"
-
+- '4.1'
+- '4.0'
+- '0.12'
+- '0.11'
+- '0.10'
 script:
-  - npm test
-
+- npm test
 after_success:
-  - test $TRAVIS_NODE_VERSION = "4.1" &&
-    npm run coverage &&
-    npm run sendcoverage
+- test $TRAVIS_NODE_VERSION = "4.1" && npm run coverage && npm run sendcoverage
+notifications:
+  hipchat:
+    rooms:
+      secure: AZ5PI3h/2xG5bY2QDYOSkbSSmSwzrqsWi06uBlsMlSu6ve/U4i+EjSn1uKMESPunEQ+GtslqQSrjMgKvxqVZLpqVg3Fit+CeoNbBesTGe4L0li9fbGMV99Oq0mfgLH75Qzr76URP5mm2tCBUzixkEb0+LHlda9enww2rPbw1uTNR50i64pwlxez+OBwPG+PO6wtI3/YqxQ2w4ZuthXPiv9u18g5VBWADWysVWgEzlKhDDxT3koVAI2AcivzIUvElLfvIkBXuJKgfqs1jwctkjjOil7iTDipWZRqIRZrA0nTHhmew6oCdX1hqtXKMWk/gTIfuUdvOVGM0eYi2PHOsKOLphc3pxir+Y/M9aJJ+xzQiYA4Euzorc72KKJx0gJeU6m5MOAyp1S3L73d8mO9TnyPeCZmJFPx0ktRnosUMcJir0QOB560V/8QDDNKYW8JFEgc9S7fnmJ4rxmVcQb3F/ySZY8zusFN31DgmrUaYdjIYLQ5V3lea712qlQgI7aAlRUpTWfLDLrkh7epWo26Q6jDUAeS7s394G87urIxRGoBwe8E88gnagF0EcZWa9wXmjnH9j2YfJyMV10+wshTPTeAzwj7BFtGTdseR/WIwZ3ZebpHLlZbq70rblzWbCXaTgD2wE1ZsWJ8N+WAM2fLpeYSQ/sraHl/xrWmMtVeqJKc=
+    template:
+      - '<b>%{result}:</b> <a href="https://github.com/%{repository_slug}">%{repository_slug}</a>#<a href="%{build_url}">%{build_number}</a> (<a href="https://github.com/%{repository_slug}/tree/%{branch}">%{branch}</a> - <a href="%{compare_url}">%{commit}</a> by %{author})<br>%{message} It took %{duration}.'
+    format: html
