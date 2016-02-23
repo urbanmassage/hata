@@ -14,5 +14,19 @@ notifications:
     rooms:
       secure: AZ5PI3h/2xG5bY2QDYOSkbSSmSwzrqsWi06uBlsMlSu6ve/U4i+EjSn1uKMESPunEQ+GtslqQSrjMgKvxqVZLpqVg3Fit+CeoNbBesTGe4L0li9fbGMV99Oq0mfgLH75Qzr76URP5mm2tCBUzixkEb0+LHlda9enww2rPbw1uTNR50i64pwlxez+OBwPG+PO6wtI3/YqxQ2w4ZuthXPiv9u18g5VBWADWysVWgEzlKhDDxT3koVAI2AcivzIUvElLfvIkBXuJKgfqs1jwctkjjOil7iTDipWZRqIRZrA0nTHhmew6oCdX1hqtXKMWk/gTIfuUdvOVGM0eYi2PHOsKOLphc3pxir+Y/M9aJJ+xzQiYA4Euzorc72KKJx0gJeU6m5MOAyp1S3L73d8mO9TnyPeCZmJFPx0ktRnosUMcJir0QOB560V/8QDDNKYW8JFEgc9S7fnmJ4rxmVcQb3F/ySZY8zusFN31DgmrUaYdjIYLQ5V3lea712qlQgI7aAlRUpTWfLDLrkh7epWo26Q6jDUAeS7s394G87urIxRGoBwe8E88gnagF0EcZWa9wXmjnH9j2YfJyMV10+wshTPTeAzwj7BFtGTdseR/WIwZ3ZebpHLlZbq70rblzWbCXaTgD2wE1ZsWJ8N+WAM2fLpeYSQ/sraHl/xrWmMtVeqJKc=
     template:
-      - '<b>%{result}:</b> <a href="https://github.com/%{repository_slug}">%{repository_slug}</a>#<a href="%{build_url}">%{build_number}</a> (<a href="https://github.com/%{repository_slug}/tree/%{branch}">%{branch}</a> - <a href="%{compare_url}">%{commit}</a> by %{author})<br>%{message} It took %{duration}.'
+    - <b>%{result}:</b> <a href="https://github.com/%{repository_slug}">%{repository_slug}</a>#<a
+      href="%{build_url}">%{build_number}</a> (<a href="https://github.com/%{repository_slug}/tree/%{branch}">%{branch}</a>
+      - <a href="%{compare_url}">%{commit}</a> by %{author})<br>%{message} It took
+      %{duration}.
     format: html
+deploy:
+  provider: npm
+  on:
+    node: '4.1'
+    tags: true
+    repo: urbanmassage/hata
+  skip_cleanup: true
+  email:
+    secure: GMkYtiM90t5hDGmdF8H+HfAPLL34dWacAfsa2+OSi0v89/raxzYDhhISX92IXb/PRopZgQtwZ1nwEDsy+Cq9JtuTSYtKUwX4U0G2ZtZoRyIa5qJiSs0SMG8t71D8bQAusKiS09Qte1tGa7OHSd86T/H1UicSGG1lVE5e0ifIxb+zQVEtyYjKfds0vHVtCwa+UVkHLN7TMTRLW8Ug354Rm2VzlM//9i8xBHDUUaGisp/g7F2GWRKHGBa6kaxR/ZqY/cQuh+w9vVuWRGfAU8SEnvAGPqja6SgHTrqkl+FDE+QjpdMyZ6wEh18/UcNDJEA5KZOip7PhT1P2oQH7E5JUSirIkoD4RxZQNHsTLPG/paVIjOptZMMwW2y98Nk1O6tMhvLWRw18Bhcz3dOwz5ZIPYkEW0fBNGXYqKkX5zgf0PhLeAGCXakcWYIvqSslXLJklKBCX3XqT4k9BSLuM/JW5geU5wrzMzv2cAev4d6Qt0BlmPTU2JQ2lIixSNIU6hfkfjiIlkWTCx2EVzPJKDw0otBmsiHCpc1P3WNrQrmeR0fMg4nbAI2Z+WPsTmjbh26bIMykwC83gQO7ZhOfkJmrgtiJP7K9J1NP15L9j601hnipVTJRKco4wDrt0TS5TpIJmDAeCmp2cjQwtX2d/z5VninxOYm8+ujs/fWAtz7g6rg=
+  api_key:
+    secure: HH8DhIf/im8y15Eeq5AUKhzb7IcesOEy9ZYuGhKf8OxooW5h+5I591nqtwbf7o7TYsUnF+SWPSnQ7W5+pFzk637sDdXZZi5zxhVOQOLCvh14AQgzxWPuI+O3a05QtBHtTkAl7yqlN+oxBuV6JvZ+Yz43CsS3hOE/i7Wqm9e1hUIFRZicE5CexaMZQHSIlHsT0V7yclEYBrPf79JLiVrS8TmhOJOpdhZuA5yWMeZZwrNOY9qMnVi0IdlVrDHpOka+MAwRXTdy+PmjU9+Xai20hnvn6QZY5sEy5g7r4tUV+RF8qXS6Sm51pfFRnUTS5Kv+MoMU96znRjIj4E5u9+H7QKgiy9ICInKprcU2YFq/UrewNYRS2bDDkDLy2/DOv9FjKPq6pUtviMzXpoGVGILEK/WE7FHFoOeI1eUc+aiGWIpsNuPhIJzBe61ox2IY1p3mvTym1jSRNnN4O9YdEbxf/g7o+2EDjKJDEsqmAFdj8CP+/zzVxAP9/iEJZ+emU0EEz5rqbpIkTGX98Rc0E/O+xkaK0KoFoKPeTOZF0QGGApLgDS5KWE/TtYue1KnsEGmpdwmSYoJEcPyCIaRQD/9iIgNRxMwNvbQ1952QLM3jNWYcqDSLk6GlfEATBi654itxZwS3SBDltUE0M4Gm+UOoE/BkiXYt1ZJ3LI22WEMGIaM=
