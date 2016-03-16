@@ -4,7 +4,6 @@
   "description": "Common HTTP errors to be used with express.js or whatever engine you use.",
   "main": "index.js",
   "scripts": {
-    "lint": "tslint index.ts",
     "build": "tsc -p .",
     "test": "mocha",
     "coverage": "istanbul cover _mocha --",
@@ -38,7 +37,6 @@
     "map-coverage": "0.0.3",
     "mocha": "^2.3.4",
     "tsd": "^0.6.5",
-    "tslint": "^3.2.1",
     "typescript": "^1.7.5"
   },
   "typings": "index.d.ts"
