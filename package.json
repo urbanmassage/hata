@@ -32,7 +32,7 @@
   "devDependencies": {
     "chai": "^3.4.1",
     "codacy-coverage": "^1.1.3",
-    "codecov.io": "^0.1.6",
+    "codecov.io": "^0.1.7",
     "istanbul": "^0.4.1",
     "map-coverage": "0.0.3",
     "mocha": "^2.3.4",
